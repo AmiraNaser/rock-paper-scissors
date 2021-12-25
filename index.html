@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="winstyle.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Pick One</div>
+      <div class="images">
+      <div class="first">
+        <input type="radio" name="game" value="rock" id="rock" onclick="getValue(this)"/>
+        <label for="rock" class="label"><img src="https://i.postimg.cc/Kj4MSZ9g/rock.png" alt="rock"></label>
+        <p>Rock</p>
+      </div>
+      <div class="sec">
+        <input type="radio" name="game" value="paper" id="paper" onclick="getValue(this)"/>
+        <label for="paper" class="label"><img src="https://i.postimg.cc/jqkf6756/paper.png" alt="paper"></label>
+        <p>paper</p>
+      </div>
+      <div class="third">
+        <input type="radio" name="game" value="scissors" id="scissors" onclick="getValue(this)"/>
+        <label for="scissors" class="label"><img src="https://i.postimg.cc/vHJ6kw5c/scissors.png" alt="scissors"></label>
+        <p>scissors</p>
+      </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+    const getValue =  (v) => {
+
+      const getVal = v.value;
+      console.log(getVal);
+     localStorage.setItem('selected', getVal);
+     window.location.href = "winner.html";
+    }
+    </script>
+  </body>
+</html>

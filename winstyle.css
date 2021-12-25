@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+ * {
+   margin: 0;
+   padding: 0;
+ }
+ body {
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ }
+ .container, .winner-wrapper {
+   margin-top: 10vw;;
+ }
+ .images {
+   display: flex;
+ }
+ .title {
+   margin-bottom: 4vw;
+   font-weight: 900;
+   font-size: 1.5vw;
+ }
+ .first, .sec, .third {
+   border: 1px solid black;
+   margin-right: 4vw;
+   padding: 2vw;
+   text-align: center;
+   cursor: pointer;
+ }
+ .container img {
+   width: 200px;
+   height: 200px;
+ }
+ .first:hover, .sec:hover, .third:hover {
+   border: 5px solid #FFB800;
+ }
+ input[type="radio"] {
+   display: none;
+ }
+ input[type="radio"] + label {
+   cursor: pointer;
+ }
+.winner-wrapper {
+  display: flex;
+}
+.comp-container {
+ margin-left: 8vw;
+}
+.comp-text, .player-text {
+  font-size: 2vw;
+  margin-bottom: 1vw;
+}
+.player-text {
+  visibility: hidden;
+}
+.comp-choose-img img{
+    transform: scaleX(-1);
+}
+.win{
+  background: url('https://svgshare.com/i/d02.svg') right top no-repeat;
+  background-size: auto;
+}
+.win img {
+   mix-blend-mode: multiply;
+}
+
+button {
+  position: absolute;
+  left: 40vw;
+  bottom: 8vw;
+  background: none;
+  font-size: 2vw;
+  padding: 1vw 4vw;
+  cursor: pointer;
+}
+button:hover {
+  background: #000;
+  color: #fff;
+}

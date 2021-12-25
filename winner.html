@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="winstyle.css">
+  </head>
+  <body class="win">
+    <div class="winner-wrapper">
+      <div class="player-container">
+        <div class="player-text">You Win</div>
+        <div class="player-choose-img"><img src="https://i.postimg.cc/jqkf6756/paper.png" alt="paper"/></div>
+      </div>
+      <div class="comp-container">
+        <div class="comp-text">Computer Wins</div>
+        <div class="comp-choose-img"><img src="https://i.postimg.cc/vHJ6kw5c/scissors.png" alt="scissors"/></div>
+      </div>
+      <button type="button" name="button" class="button">Play Again?</button>
+    </div>
+
+
+    <script type="text/javascript">
+      const choices = ["rock","paper", "scissors"];
+      const comp_choose_img = document.querySelector('.comp-choose-img');
+      const comp_text = document.querySelector('.comp-text');
+      const player_text = document.querySelector('.player-text');
+      const win = document.querySelector('.win');
+
+      console.log(comp_choose_img);
+      let comp_choice = choices[Math.floor(Math.random()*choices.length)];
+      console.log(comp_choice);
+      if(comp_choice == "rock"){
+        comp_choose_img.innerHTML = "<img src=\"https://i.postimg.cc/Kj4MSZ9g/rock.png\"/>";
+      }else if (comp_choice == "paper") {
+        comp_choose_img.innerHTML = "<img src=\"https://i.postimg.cc/jqkf6756/paper.png\"/>";
+      }else if (comp_choice == "scissors") {
+        comp_choose_img.innerHTML = "<img src=\"https://i.postimg.cc/vHJ6kw5c/scissors.png\"/>";
+      }
+
+      const player_choose_img = document.querySelector('.player-choose-img');
+      const value = localStorage.getItem('selected')
+      console.log(value);
+      if (value === "rock") {
+        player_choose_img.innerHTML = "<img src=\"https://i.postimg.cc/Kj4MSZ9g/rock.png\"/>";
+      } else if (value === "paper") {
+        player_choose_img.innerHTML = "<img src=\"https://i.postimg.cc/jqkf6756/paper.png\"/>";
+      } else if (value === "scissors") {
+        player_choose_img.innerHTML = "<img src=\"https://i.postimg.cc/vHJ6kw5c/scissors.png\"/>";
+      }
+
+      if (value=="scissors" && comp_choice == "rock") {
+        comp_text.style.visibility = "visible";
+        player_text.style.visibility = "hidden";
+        win.style.background = "url('https://svgshare.com/i/d02.svg') right top no-repeat";
+      }else if (value =="paper" && comp_choice == "scissors") {
+        comp_text.style.visibility = "visible";
+        player_text.style.visibility = "hidden";
+        win.style.background = "url('https://svgshare.com/i/d02.svg') right top no-repeat";
+      }else if (value =="rock" && comp_choice == "paper") {
+        comp_text.style.visibility = "visible";
+        player_text.style.visibility = "hidden";
+        win.style.background = "url('https://svgshare.com/i/d02.svg') right top no-repeat";
+      }
+      else if (value=="rock" && comp_choice == "scissors") {
+        player_text.style.visibility = "visible";
+        comp_text.style.visibility = "hidden";
+        win.style.background = "url('https://svgshare.com/i/d0z.svg') left top no-repeat";
+      }else if (value=="scissors" && comp_choice == "paper") {
+        player_text.style.visibility = "visible";
+        comp_text.style.visibility = "hidden";
+        win.style.background = "url('https://svgshare.com/i/d0z.svg') left top no-repeat";
+      }else if (value=="paper" && comp_choice == "rock") {
+        player_text.style.visibility = "visible";
+        comp_text.style.visibility = "hidden";
+        win.style.background = "url('https://svgshare.com/i/d0z.svg') left top no-repeat";
+      }else if (value == comp_choice) {
+        player_text.innerHTML = "Try Again";
+        player_text.style.visibility = "visible";
+        comp_text.innerHTML = "Try Again";
+        win.style.background = "url('https://svgshare.com/i/d0z.svg') left top no-repeat, url('https://svgshare.com/i/d02.svg') right top no-repeat";
+      }
+
+      document.querySelector('.button').addEventListener('click', () => {
+        window.location.href = "index.html";
+      })
+
+    </script>
+    <script type="text/javascript" src="winner.js"></script>
+  </body>
+</html>
